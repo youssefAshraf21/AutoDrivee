@@ -1,0 +1,35 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
+import Home from './pages/Home';
+import Cars from './pages/Cars';
+import CarDetails from './pages/CarDetails';
+import Contact from './pages/Contact';
+import Favorites from './pages/Favorites';
+import Cart from './pages/Cart';
+import { CartProvider } from './context/CartContext';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <CartProvider>
+        <div className="flex flex-col min-h-screen">
+          <Navbar />
+          <main className="flex-1">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/cars" element={<Cars />} />
+              <Route path="/cars/:id" element={<CarDetails />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/favorites" element={<Favorites />} />
+              <Route path="/cart" element={<Cart />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </CartProvider>
+    </BrowserRouter>
+  );
+}
+
+export default App;
