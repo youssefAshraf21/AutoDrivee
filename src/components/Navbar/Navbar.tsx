@@ -26,7 +26,7 @@ function Navbar() {
   }, []);
 
   const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault();// make the page not reload when the form is submitted
     if (search.trim()) {
       navigate(`/cars?search=${encodeURIComponent(search.trim())}`);
       setSearch('');

@@ -5,7 +5,7 @@ function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm({ ...form, [e.target.name]: e.target.value });//Computed Property Names
   };
 
   const handleSubmit = (e: React.FormEvent) => {

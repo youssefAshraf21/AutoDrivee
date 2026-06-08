@@ -15,7 +15,7 @@ function CarDetails() {
 
   useEffect(() => {
     if (id) {
-      fetchCarById(Number(id))
+      fetchCarById(Number(id)) // it always returns a string, so we need to convert it to a number
         .then((data) => {
           setCar(data || null);
           setLoading(false);
