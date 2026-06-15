@@ -15,7 +15,7 @@ function CarDetails() {
 
   useEffect(() => {
     if (id) {
-      fetchCarById(Number(id)) // it always returns a string, so we need to convert it to a number
+      fetchCarById(Number(id)) 
         .then((data) => {
           setCar(data || null);
           setLoading(false);
@@ -90,9 +90,9 @@ function CarDetails() {
               <img
                 src={car.image}
                 alt={car.name}
-                className="w-full h-[400px] lg:h-[500px] object-cover"
+                className="w-full h-100 lg:h-125 object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-[#0f172a] via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5">
                 <span className="bg-orange-500 text-white text-sm font-bold px-4 py-1.5 rounded-full">
                   {car.brand}
@@ -117,7 +117,7 @@ function CarDetails() {
 
             <button
               onClick={() => navigate('/contact')}
-              className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 rounded-xl font-bold text-base border-none cursor-pointer hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg shadow-orange-500/20"
+              className="w-full bg-linear-to-r from-orange-500 to-orange-600 text-white py-4 rounded-xl font-bold text-base border-none cursor-pointer hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg shadow-orange-500/20"
             >
               Inquire About This Car
             </button>
